@@ -37,24 +37,24 @@ export function ServiceCard({
           alt={title}
           className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
-        <div className="absolute top-3 left-3">
-          <span className="rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground">
+        <div className="absolute top-2 left-2 md:top-3 md:left-3">
+          <span className="rounded-full bg-primary px-2 py-0.5 md:px-3 md:py-1 text-xs font-medium text-primary-foreground">
             {category}
           </span>
         </div>
       </div>
-      <div className="p-5 space-y-3">
-        <h3 className="text-lg font-semibold text-foreground line-clamp-1">{title}</h3>
-        <p className="text-sm text-muted-foreground line-clamp-2">{description}</p>
-        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-          <Clock className="h-4 w-4" />
+      <div className="p-3 md:p-5 space-y-2 md:space-y-3">
+        <h3 className="text-sm md:text-lg font-semibold text-foreground line-clamp-1">{title}</h3>
+        <p className="text-xs md:text-sm text-muted-foreground line-clamp-2">{description}</p>
+        <div className="flex items-center gap-2 text-xs md:text-sm text-muted-foreground">
+          <Clock className="h-3 w-3 md:h-4 md:w-4" />
           <span>{duration}</span>
         </div>
         <div className="flex items-center justify-between pt-2 border-t border-border">
-          <span className="text-xl font-bold text-primary">
+          <span className="text-base md:text-xl font-bold text-primary">
             R$ {price.toFixed(2).replace(".", ",")}
           </span>
-          <Button variant="hero" size="sm" asChild>
+          <Button variant="hero" size="sm" asChild className="text-xs md:text-sm px-2 md:px-3">
             <Link to={`/agendamento?servico=${id}`}>Agendar</Link>
           </Button>
         </div>
